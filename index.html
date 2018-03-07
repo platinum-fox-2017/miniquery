@@ -1,0 +1,22 @@
+<html>
+  <head>
+
+  </head>
+  <body>
+    <h1 id="eyed">HELLO</h1>
+    <h2 class="klass shabi">World</h2>
+    <p>Test</p>
+    <script src="./lib/miniquery.js"></script>
+    <script>
+        AjaxWrapper.request({
+          url: 'http://localhost:3000/home',
+          type: 'GET',
+          success: data => {
+            console.log(data)
+          },
+          fail: function() {
+
+          }
+        })</script>
+  </body>
+</html>
