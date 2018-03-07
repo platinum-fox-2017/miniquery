@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>MiniQuery</title>
+
+  </head>
+  <body>
+    <div id="eyed">
+      eyed
+    </div>
+    <div class="klass">
+      klass
+    </div>
+    <a href="#hello">click me</a>
+
+    <script src="/lib/miniquery.js"></script>
+    <script type="text/javascript">
+      let eyed = SweetSelector.select('#eyed')
+      console.log(eyed);
+      let klass = SweetSelector.select('.klass')
+      console.log(klass);
+      let a = SweetSelector.select('a')
+      console.log(a);
+      // DOM.hide('#eyed')
+      miniquery('#eyed').hide();
+      miniquery('#eyed').show();
+      $('#eyed').hide();
+      // DOM.show('#eyed')
+      // DOM.addClass('.klass','shadi')
+      miniquery('.klass').addClass('shadi');
+      // DOM.removeClass('.klass','shadi')
+      miniquery('.klass').removeClass('shadi');
+
+      // EventDispatcher.on('.klass','click',() => {
+      //   console.log("awesome");
+      // });
+      miniquery('.klass').on('click',() => {
+        console.log("awesome");
+      });
+      // EventDispatcher.trigger('.klass','click');
+      miniquery('.klass').trigger('click');
+      // AjaxWrapper.request({
+      //   url: 'http://localhost:3000/search?q=hacktiv8',
+      //   type: 'GET',
+      //   success: () => {
+      //     console.log('berhasil');
+      //   },
+      //   fail: () => {
+      //     console.log('gagal');
+      //   }
+      // })
+      miniquery().ajax({
+        url: 'http://localhost:3000/search?q=hacktiv8',
+        type: 'GET',
+        success: (data) => {
+          console.log('berhasil');
+        },
+        fail: () => {
+          console.log('gagal');
+        }
+      })
+
+    </script>
+  </body>
+</html>
