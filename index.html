@@ -22,18 +22,38 @@
       console.log(klass);
       let a = SweetSelector.select('a')
       console.log(a);
-      DOM.hide('#eyed')
-      DOM.show('#eyed')
-      DOM.addClass('.klass','shadi')
-      DOM.removeClass('.klass','shadi')
-      EventDispatcher.on('.klass','click',() => {
+      // DOM.hide('#eyed')
+      miniquery('#eyed').hide();
+      miniquery('#eyed').show();
+      $('#eyed').hide();
+      // DOM.show('#eyed')
+      // DOM.addClass('.klass','shadi')
+      miniquery('.klass').addClass('shadi');
+      // DOM.removeClass('.klass','shadi')
+      miniquery('.klass').removeClass('shadi');
+
+      // EventDispatcher.on('.klass','click',() => {
+      //   console.log("awesome");
+      // });
+      miniquery('.klass').on('click',() => {
         console.log("awesome");
       });
-      EventDispatcher.trigger('.klass','click');
-      AjaxWrapper.request({
+      // EventDispatcher.trigger('.klass','click');
+      miniquery('.klass').trigger('click');
+      // AjaxWrapper.request({
+      //   url: 'http://localhost:3000/search?q=hacktiv8',
+      //   type: 'GET',
+      //   success: () => {
+      //     console.log('berhasil');
+      //   },
+      //   fail: () => {
+      //     console.log('gagal');
+      //   }
+      // })
+      miniquery().ajax({
         url: 'http://localhost:3000/search?q=hacktiv8',
         type: 'GET',
-        success: () => {
+        success: (data) => {
           console.log('berhasil');
         },
         fail: () => {
