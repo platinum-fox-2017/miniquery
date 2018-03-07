@@ -26,6 +26,10 @@
       DOM.show('#eyed')
       DOM.addClass('.klass','shadi')
       DOM.removeClass('.klass','shadi')
+      EventDispatcher.on('.klass','click',() => {
+        console.log("awesome");
+      });
+      EventDispatcher.trigger('.klass','click');
 
     </script>
   </body>
