@@ -18,3 +18,8 @@ class DOM{
         return document.querySelector(input).classList.remove(className);
     }
 }
+class EventDispatcher{
+    static on(input,event,cb){
+        document.querySelector(input).addEventListener(event, cb())
+    }
+}
