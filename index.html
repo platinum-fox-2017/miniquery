@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Miniquery</title>
+  </head>
+  <body>
+    <h1 class="header">Hello</h1>
+    <div class="content">
+      <p>testing content here</p>
+    </div>
+    <button type="button" name="button" onclick="DOM.hide('.header')">Hide</button>
+    <button type="button" name="button" onclick="DOM.show('.header')">Show</button>
+
+  </body>
+  <script src="./lib/miniquery.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    let selection = SweetSelector.select('.header')
+    console.log(selection[0].attributes);
+    DOM.addClass('p', 'paragraph')
+    console.log(SweetSelector.select('p'));
+    EventDispatcher.on('p', 'click', function(){console.log('paragraph');})
+    EventDispatcher.trigger('p', 'click')
+  </script>
+</html>
