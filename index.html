@@ -24,8 +24,30 @@
         // console.log(SweetSelector.select('.klass'))
         // DOM.removeClass('.klass','shadi');
         //RELEASE 2
-        EventDispatcher.on('.klass','click',()=>console.log('awesome'));
+        // EventDispatcher.on('.klass','click',()=>console.log('awesome'));
+        //RELEASE 3
+        AjaxWrapper.request({
+            url:'http://localhost:8080/',
+            type:'GET',
+            success:function(data){
+                console.log('success' + data)
+            },
+            fail:function(){
+                console.log(`error`)
+            }
+        });
         </script>
     </footer>
 </html>
+
+<!-- AjaxWrapper.request({
+    url: 'someurl',
+    type: 'GET',
+    success: function() {
+    //do something
+    },
+    fail: function() {
+    //do something
+    }
+}); -->
 
